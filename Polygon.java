@@ -16,7 +16,7 @@ public class Polygon extends JFrame implements ActionListener
     int value = 3;
     JMenu menu;
     JMenuItem line1, line3, line5, line8;
-    JPanel panelCenter;
+    DrawablePanel panelCenter;
     JButton bgcolor_btn;
     JButton fgcolor_btn;
     JButton draw;
@@ -114,43 +114,43 @@ public class Polygon extends JFrame implements ActionListener
         if(actionEvent.getSource() == bgcolor_btn)
         {
             System.out.println("bg color button pressed");
-            bgcolor = JColorChooser.showDialog(null, "Wybierz kolor tla", panelCenter.getBackground());
+            bgcolor = JColorChooser.showDialog(this, "Wybierz kolor tla", panelCenter.getBackground());
             panelCenter.setBackground(bgcolor);
         }
         if(actionEvent.getSource() == fgcolor_btn)
         {
             System.out.println("fg color button pressed");
-            fgcolor = JColorChooser.showDialog(null, "Wybierz kolor linii", Color.blue);
-            DrawablePanel.setLineColor(fgcolor);
+            fgcolor = JColorChooser.showDialog(this, "Wybierz kolor linii", panelCenter.fgcolor);
+            panelCenter.fgcolor = fgcolor;
         }
         if(actionEvent.getSource() == line1)
         {
-            DrawablePanel.setLineThickness(1);
+            panelCenter.lineThickness = 1;
         }
         if(actionEvent.getSource() == line3)
         {
-            DrawablePanel.setLineThickness(3);
+            panelCenter.lineThickness = 3;
         }
         if(actionEvent.getSource() == line5)
         {
-            DrawablePanel.setLineThickness(5);
+            panelCenter.lineThickness = 5;
         }
         if(actionEvent.getSource() == line8)
         {
-            DrawablePanel.setLineThickness(8);
+            panelCenter.lineThickness = 8;
         }
         if(actionEvent.getSource() == draw)
         {
             if(radio1.isSelected())
             {
                 System.out.println("Rysujemy foremny");
-                DrawablePanel.setValue(slider.getValue());
+                panelCenter.ilebokow = slider.getValue();
                 panelCenter.repaint();
             }
             if(radio2.isSelected())
             {
                 System.out.println("Rysujemy losowy");
-                DrawablePanel.setValue(slider.getValue());
+                panelCenter.ilebokow = slider.getValue();
                 panelCenter.repaint();
             }
 

@@ -7,26 +7,26 @@ import java.util.Random;
 public class DrawablePanel extends JPanel
 {
     private static final double PI = 3.141592;
-    public static int ilebokow;
-    public static Color fgcolor;
-    public static int lineThickness;
+    int ilebokow;
+    Color fgcolor;
+    int lineThickness;
 
-
-    public static void setValue(int value)
-    {
-        ilebokow = value;
-    }
-
-    public static void setLineColor(Color whatcolor)
-    {
-        fgcolor = whatcolor;
-    }
-
-    public static void setLineThickness(int thickness)
-    {
-        lineThickness = thickness;
-
-    }
+//
+//    public static void setValue(int value)
+//    {
+//        ilebokow = value;
+//    }
+//
+//    public static void setLineColor(Color whatcolor)
+//    {
+//        fgcolor = whatcolor;
+//    }
+//
+//    public static void setLineThickness(int thickness)
+//    {
+//        lineThickness = thickness;
+//
+//    }
 
     public void paintComponent(Graphics g)
     {
